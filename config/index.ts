@@ -17,6 +17,10 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
+    // 生产环境禁用 source map，防止源码泄露
+    sourceMap: {
+      enable: process.env.NODE_ENV === 'development'
+    },
     plugins: [],
     defineConstants: {
     },
