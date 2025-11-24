@@ -25,3 +25,8 @@ declare namespace NodeJS {
     TARO_APP_ID: string
   }
 }
+
+// Redux DevTools 扩展类型声明
+interface Window {
+  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: (options?: any) => typeof import('redux').compose
+}
