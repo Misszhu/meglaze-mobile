@@ -9,8 +9,8 @@ import {
   LOGOUT,
   UPDATE_USER_INFO,
 } from '../constants/user'
-import type { UserState } from '../../types/user'
-import { LoginStatus } from '../../types/user'
+import type { UserState } from '../types/user'
+import { LoginStatus } from '../types/user'
 
 const INITIAL_STATE: UserState = {
   loginStatus: LoginStatus.NOT_LOGGED_IN,

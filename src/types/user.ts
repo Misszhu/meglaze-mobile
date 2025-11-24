@@ -1,5 +1,3 @@
-import type { ApiResponse, PaginationParams, PaginationResponse } from './api'
-
 /**
  * 登录类型
  */

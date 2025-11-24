@@ -8,7 +8,7 @@ import type {
     RefreshTokenRequest,
     RefreshTokenResponse,
     User,  
-} from '../../../types/user'
+} from '../../types/user'
 
 /**
  * 微信/邮箱登录

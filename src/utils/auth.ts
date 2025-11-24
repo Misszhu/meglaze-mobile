@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import { wxLoginApi, emailLoginApi, getUserInfoApi, logoutApi } from '../services/api/auth'
 import storage from './storage'
 import platform from './platform'
-import type { LoginResponse, User } from '../../types/user'
+import type { LoginResponse, User } from '../types/user'
 
 /**
  * 检查登录状态

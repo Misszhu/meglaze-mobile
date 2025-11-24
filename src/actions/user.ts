@@ -11,7 +11,7 @@ import {
 } from '../constants/user'
 import { wxLogin, emailLogin, logout as logoutUtil } from '../utils/auth'
 import storage from '../utils/storage'
-import type { User, LoginStatus } from '../../types/user'
+import type { User, LoginStatus } from '../types/user'
 
 /**
  * 设置登录状态

@@ -1,11 +1,11 @@
 import Taro from '@tarojs/taro'
 import storage from '../utils/storage'
-import type { RequestOptions } from '../../types/services'
+import type { RequestOptions } from '../types/services'
 
 const BASE_URL = process.env.TARO_APP_API_BASE_URL || ''
 const DEFAULT_TIMEOUT = 30000
 
-onst request = async <T = any>(options: RequestOptions): Promise<T> => {
+const request = async <T = any>(options: RequestOptions): Promise<T> => {
     const {
         url,
         method = 'GET',
@@ -35,7 +35,7 @@ onst request = async <T = any>(options: RequestOptions): Promise<T> => {
     }
 
     try {
-        const res = await Taro.request<Taro.request.SuccessCallbackResult<T>>({
+        const res = await Taro.request({
             url: `${BASE_URL}${url}`,
             method: method as any,
             data,
@@ -91,14 +91,13 @@ onst request = async <T = any>(options: RequestOptions): Promise<T> => {
     }
 }
 
-export const get = <T = any>(url: string, params?: Record<string, any>, options?: Partial<RequestOptions>): Promise<T> => {
+export const get = <T = any>(url: string, params?: Record<string, any>, options?: Partial<RequestOptions>): Promise<T> =>
     request<T>({
         url,
         method: 'GET',
         data: params,
         ...options,
     })
-}
 
 export const post = <T = any>(url: string, data?: any, options?: Partial<RequestOptions>) =>
     request<T>({
@@ -116,7 +115,7 @@ export const put = <T = any>(url: string, data?: any, options?: Partial<RequestO
         ...options,
     })
   
-export const delete = <T = any>(url: string, data?: any, options?: Partial<RequestOptions>) =>
+export const del = <T = any>(url: string, data?: any, options?: Partial<RequestOptions>) =>
     request<T>({
         url,
         method: 'DELETE',
