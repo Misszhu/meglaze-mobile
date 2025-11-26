@@ -1,4 +1,281 @@
-.index {
+.home-page {
+  min-height: 100vh;
+  background: #f5f6f8;
+  padding-bottom: calc(40rpx + env(safe-area-inset-bottom));
+}
+
+/* ==================== 顶部 Banner ==================== */
+.banner {
+  position: relative;
+  min-height: 360rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: visible;
+}
+
+.banner-bg {
+  position: absolute;
+  top: -100rpx;
+  right: -100rpx;
+  width: 400rpx;
+  height: 400rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  padding: 60rpx 40rpx 80rpx;
+  z-index: 10;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360rpx;
+}
+
+.banner-title {
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.title {
+  display: block;
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+  letter-spacing: 2rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.banner-actions {
+  display: flex;
+  gap: 24rpx;
   width: 100%;
+  justify-content: center;
+  position: relative;
+  z-index: 11;
+}
+
+.action-btn {
+  flex: 1;
+  max-width: 280rpx;
+  padding: 24rpx 48rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 12;
+  
+  &.primary {
+    background: #fff;
+    box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.15);
+    
+    &:active {
+      transform: scale(0.95);
+      box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  &.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10rpx);
+    border: 2rpx solid rgba(255, 255, 255, 0.3);
+    
+    &:active {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0.95);
+    }
+  }
+}
+
+.btn-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #667eea;
+  
+  .secondary & {
+    color: #fff;
+  }
+}
+
+/* ==================== 数据统计 ==================== */
+.stats-section {
+  margin: -60rpx 40rpx 40rpx;
+  position: relative;
+  z-index: 5;
+}
+
+.stats-card {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx 0;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 10rpx;
+}
+
+.stat-label {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.stat-divider {
+  width: 1rpx;
+  height: 60rpx;
+  background: #e5e5e5;
+}
+
+/* ==================== 快捷入口 ==================== */
+.quick-entries {
+  margin: 0 40rpx 40rpx;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  padding-left: 20rpx;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6rpx;
+    height: 28rpx;
+    background: #667eea;
+    border-radius: 3rpx;
+  }
+}
+
+.more-text {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+
+/* ==================== 最新动态 ==================== */
+.news-section {
+  margin: 0 40rpx 40rpx;
+}
+
+.news-list {
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.news-item {
+  padding: 30rpx;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1rpx solid #f5f5f5;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.news-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+
+.news-content {
+  flex: 1;
+  margin-left: 24rpx;
+}
+
+.news-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.news-desc {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 12rpx;
+}
+
+.news-time {
+  display: block;
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* ==================== 底部信息 ==================== */
+.footer {
+  text-align: center;
+  padding: 60rpx 40rpx 40rpx;
+}
+
+.footer-text {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.8;
+}
+
+/* ==================== 响应式适配 ==================== */
+@media (max-width: 375px) {
+  .grid-container {
+    gap: 20rpx;
+  }
+}
+
+/* ==================== 加载状态 ==================== */
+.loading-placeholder {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
 }
